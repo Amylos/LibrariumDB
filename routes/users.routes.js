@@ -1,18 +1,12 @@
 const express = require('express');
-const { setUsers } = require('../controllers/users.controller');
+const { setUser, getUsers, editUser } = require('../controllers/users.controller');
 const router = express.Router();
 
 
-router.get("/",(req,res)=>{
-    res.send('get users');
-})
+router.get("/",getUsers);
+router.post("/",setUser);
 
-router.post("/",setUsers);
-
-router.put("/:id",(req,res)=>{
-    res.send('put users');
-
-});
+router.put("/:id",editUser);
 
 router.patch("/:id",(req,res)=>{
     res.send('patch users');
