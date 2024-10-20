@@ -19,7 +19,8 @@ const authentification = async (req, res, next) => {
 
         // Ajoute l'utilisateur et le token à l'objet req pour que les prochains middlewares puissent y accéder
         req.user = user;
-        req.token = authToken;
+        // req.token = authToken;
+        req.authToken = authToken;
 
         // Passe au middleware suivant ou à la route suivante
         next();
