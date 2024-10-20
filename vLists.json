@@ -1,0 +1,19 @@
+{
+    "author": "string",
+    "faction": "string",
+    "army": "string",
+    "points": "int",
+    "unitsNumber": "int",
+    "figurinesNumber" : "int",
+    "detachments": "string",
+    "created_at": "date",
+    "updated_at": "date",
+    "units":[
+        {
+            "units":"array"
+        },
+        {
+            "units":"array"
+        }
+    ]
+}

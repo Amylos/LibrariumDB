@@ -1,0 +1,59 @@
+{
+    "id": 1,
+    "faction": "Space Marines",
+    "unite": "Intercesseur",
+    "type": "Ligne",
+    "points": [80, 160],
+    "figurines": [5, 10],
+    "stats": {
+        "mouvement": 6,
+        "endurance": 4,
+        "sauvegarde": ["3+", "4+"],
+        "points-de-vie": 2,
+        "commandement": 6,
+        "controle-objectif": 2
+    },
+    "armes": {
+            "bolter": {
+                "selected": true,
+                "portee": 24,
+                "attaque": 1,
+                "force": 4,
+                "C/T": 1,
+                "PA": -1,
+                "degats": 1,
+                "capacites": ["A"]
+            },
+            "bolter-stalker": {
+                "selected": true,
+                "portee": 36,
+                "attaque": 1,
+                "force": 4,
+                "C/T": 1,
+                "PA": -2,
+                "degats": 1,
+                "capacites": ["Assaut", "Lourd"]
+            },
+            "epee-energetique": {
+                "selected": true,
+                "portee": 0,
+                "attaque": 1,
+                "force": 5,
+                "C/T": 1,
+                "PA": -3,
+                "degats": 1,
+                "capacites": ["A", "D3"]
+        }
+    },
+    "aptidudes": {
+        "Ils ne connaitront pas la peur": "A la fin de votre phase de commandement, si cette unite controle un objectif, vous le conservez meme s'il n'y a plus d'unites amies a portee, sauf si l'ennemi le reprend au debut ou a la fin d'un tour.",
+        " deuxieme ": "blabla"
+    },
+    "aptidudes-base": {
+        "Meneur": "BLABA",
+        "deuxieme":"blabla"
+    },
+    "mots-cles": ["Escouade Intercessor","Grenades","Imperium","Infanterie","Ligne","Tacticus"],
+    "optimisations": []
+}
+

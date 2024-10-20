@@ -1,0 +1,56 @@
+{
+    "name": "string",
+    "faction": "string",
+    "rules": [
+      {
+        "rule_name": "Nom de la règle",
+        "description": "Description détaillée de la règle"
+      }
+    ],
+    "optimisations": {
+      "option_name": "Description de l'optimisation",
+      "option_name_2": "Description de l'optimisation 2",
+      "option_name_3": "Description de l'optimisation 2",
+      "option_name_4": "Description de l'optimisation 2",
+      "option_name_5": "Description de l'optimisation 2",
+      "option_name_6": "Description de l'optimisation 2"
+
+    },
+    "stratagems": [
+      {
+        "stratagem_name": "Nom du stratagème",
+        "cost": 2,
+        "description": "Description de l'effet"
+      },
+      {
+        "stratagem_name": "Autre stratagème",
+        "cost": 3,
+        "description": "Autre description"
+      }
+      ,
+      {
+        "stratagem_name": "Autre stratagème",
+        "cost": 3,
+        "description": "Autre description"
+      }
+      ,
+      {
+        "stratagem_name": "Autre stratagème",
+        "cost": 3,
+        "description": "Autre description"
+      }
+      ,
+      {
+        "stratagem_name": "Autre stratagème",
+        "cost": 3,
+        "description": "Autre description"
+      }
+      ,
+      {
+        "stratagem_name": "Autre stratagème",
+        "cost": 3,
+        "description": "Autre description"
+      }
+    ]
+  }
+  

@@ -1,0 +1,8 @@
+{
+    "pseudo":"string",
+    "password":"string",
+    "mail":"string",
+    "role":"string",
+    "created_at":"date",
+    "updated_at": "date"
+}

@@ -10,10 +10,17 @@ const usersSchema = mongoose.Schema(
         password:{
             type:String,
             required:true,
+        },
+        mail:{
+            type:String,
+            required:true
+        },
+        role:{
+            type:String,
         }
     },
     {
-        timesstamps:true,
+        timestamps:true,
     }
 )
 
