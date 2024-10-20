@@ -3,24 +3,26 @@ const usersModel = require('../models/users.model');
 
 module.exports.loginUser = async(req,res)=>{
     const {mail,password} = req.body;
-    console.log(mail,password);
     try{
         const user = await usersModel.findUser(mail,password);
+        const authToken = await user.generateAuthTokenAndSaveUser();
 
         if(user){
-            res.status(200).json(user);
+            res.status(200).json({user});
         }
         else{
             res.status(400).json("User not find");
         }
     }
     catch(err){
-        res.status(400).json(err);
+        res.status(400).json("Mail or password incorrect.");
     }
 }
 
 
-
+module.exports.getUserMe = async(req,res)=>{
+    res.send(req.user);
+};
 
 
 
@@ -61,13 +63,13 @@ module.exports.getUser = async (req, res) => {
 
 module.exports.setUser = async(req,res)=>{
     const {pseudo,password,mail} = req.body;
-
+    const authToken = await user.generateAuthTokenAndSaveUser();
     try{
         if(req.body){
             const user = await usersModel.create({
                 pseudo: pseudo,
                 password: password,
-                mail: mail
+                mail: mail,
             });
             res.status(200).json(user);
         }

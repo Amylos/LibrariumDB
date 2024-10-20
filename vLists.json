@@ -1,5 +1,6 @@
 {
     "author": "string",
+    "userId": "string",
     "faction": "string",
     "army": "string",
     "points": "int",
