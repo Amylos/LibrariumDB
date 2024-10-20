@@ -1,5 +1,26 @@
 const usersModel = require('../models/users.model');
-const UsersModel = require('../models/users.model');
+
+
+module.exports.loginUser = async(req,res)=>{
+    const {mail,password} = req.body;
+    console.log(mail,password);
+    try{
+        const user = await usersModel.findUser(mail,password);
+
+        if(user){
+            res.status(200).json(user);
+        }
+        else{
+            res.status(400).json("User not find");
+        }
+    }
+    catch(err){
+        res.status(400).json(err);
+    }
+}
+
+
+
 
 
 
@@ -39,17 +60,26 @@ module.exports.getUser = async (req, res) => {
 
 
 module.exports.setUser = async(req,res)=>{
-    if(req.body){
-        const user = await usersModel.create({
-            pseudo: req.body.pseudo,
-            password: req.body.password,
-            mail: req.body.mail
-        });
-        res.status(200).json(user);
+    const {pseudo,password,mail} = req.body;
+
+    try{
+        if(req.body){
+            const user = await usersModel.create({
+                pseudo: pseudo,
+                password: password,
+                mail: mail
+            });
+            res.status(200).json(user);
+        }
+        else{
+            res.status(400).json({message: "body is missing"});
+        }
     }
-    else{
-        res.status(400).json({message: "body is missing"})
+    catch(err){
+        res.status(400).json(err);
+
     }
+
 };
 
 
