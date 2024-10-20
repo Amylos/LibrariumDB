@@ -5,7 +5,6 @@ const UsersModel = require('../models/users.model');
 
 
 module.exports.getUsers = async(req,res)=>{
-    console.log(req.body);
     const users = await usersModel.find();
     res.status(200).json(users);
 };
@@ -40,7 +39,6 @@ module.exports.getUser = async (req, res) => {
 
 
 module.exports.setUser = async(req,res)=>{
-    console.log(req.body);
     if(req.body){
         const user = await usersModel.create({
             pseudo: req.body.pseudo,
@@ -56,7 +54,6 @@ module.exports.setUser = async(req,res)=>{
 
 
 module.exports.editUser = async(req,res) =>{
-    console.log(req.body);
     const user = await usersModel.findById(req.params.id);
 
     if(!user){
@@ -74,14 +71,19 @@ module.exports.editUser = async(req,res) =>{
 
 
 module.exports.deleteUser = async(req,res)=>{
-    console.log(req.body);
-    const user = await usersModel.deleteOne(req.params.pseudo);
+    const userId = req.params.id
 
-    if(user){
-        res.status(200).json(req.body);
+    try{
+        const user = await usersModel.deleteOne(userId);
+        if(user){
+            res.status(200).json(req.body);
+        }
+        else{
+            res.status(400).json('User not find');
+        }
     }
-    else{
-        res.status(400).json('Error while removing user');
+    catch(err){
+        res.status(400).json(err);
     }
 }
 
