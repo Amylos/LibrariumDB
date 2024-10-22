@@ -9,7 +9,7 @@ const port = process.env.PORT;
 /// A enlever en prod
 app.use(cors({
     origin: 'http://localhost:3000', // Permet uniquement les requêtes de cette origine
-    methods: ['GET', 'POST','DELETE'], // Méthodes autorisées
+    methods: ['GET', 'POST','DELETE','PATCH'], // Méthodes autorisées
 }));
 
 // Connexion à la base de donnée mongoDB
