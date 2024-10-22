@@ -1,6 +1,7 @@
 const usersModel = require('../models/users.model');
 
 
+//Log in User
 module.exports.loginUser = async(req,res)=>{
     const {mail,password} = req.body;
     try{
@@ -19,6 +20,8 @@ module.exports.loginUser = async(req,res)=>{
     }
 }
 
+
+//Log out User
 module.exports.logoutUser = async(req,res)=>{
     try{
         req.user.authTokens = req.user.authTokens.filter((authToken)=>{
@@ -32,6 +35,56 @@ module.exports.logoutUser = async(req,res)=>{
         res.status(500).send(err);
     }
 }
+
+// Create User
+module.exports.createUser = async(req,res)=>{
+    const {pseudo,password,mail} = req.body;
+    try{
+        if(req.body){
+            const user = await usersModel.create({
+                pseudo: pseudo,
+                password: password,
+                mail: mail,
+            });
+            // const authToken = await user.generateAuthTokenAndSaveUser();
+
+            res.status(200).json(user);
+        }
+        else{
+            res.status(400).json({message: "body is missing"});
+        }
+    }
+    catch(err){
+        res.status(400).json(err);
+
+    }
+};
+
+// Edit User
+module.exports.editUser = async (req, res) => {
+    try {
+        // Trouver l'utilisateur par ID
+        const user = await usersModel.findById(req.params.id);
+
+        // Vérifier si l'utilisateur existe
+        if (!user) {
+            return res.status(404).json("This user does not exist");
+        }
+
+        // Mettre à jour l'utilisateur avec les nouvelles données
+        const updatedUser = await usersModel.findByIdAndUpdate(
+            req.params.id, // Utiliser l'ID de l'utilisateur ici
+            req.body,
+            { new: true } // Retourner l'utilisateur mis à jour
+        );
+
+        res.status(200).json(updatedUser); // Renvoie l'utilisateur mis à jour
+    } catch (err) {
+        res.status(400).json(err); // Renvoie l'erreur en cas d'échec
+    }
+}
+
+
 
 
 module.exports.logoutUserAll = async(req,res)=>{
@@ -66,28 +119,7 @@ module.exports.getUsers = async(req,res)=>{
 };
 
 
-module.exports.createUser = async(req,res)=>{
-    const {pseudo,password,mail} = req.body;
-    try{
-        if(req.body){
-            const user = await usersModel.create({
-                pseudo: pseudo,
-                password: password,
-                mail: mail,
-            });
-            // const authToken = await user.generateAuthTokenAndSaveUser();
 
-            res.status(200).json(user);
-        }
-        else{
-            res.status(400).json({message: "body is missing"});
-        }
-    }
-    catch(err){
-        res.status(400).json(err);
-
-    }
-};
 
 
 
@@ -121,29 +153,7 @@ module.exports.getUser = async (req, res) => {
 
 
 
-module.exports.editUser = async(req,res) =>{
 
-    try{
-        const user = await usersModel.findById(req.params.id);
-
-        if(!user){
-            res.status(400).json("This user does not exits");
-        }
-
-        const updateUser = await usersModel.findByIdAndUpdate(
-            user,
-            req.body,
-            {new: true}
-        );
-
-        res.status(200).json(user);
-    }
-    catch(err){
-        res.status(400).json(err);
-
-    }
-
-}
 
 
 module.exports.deleteUser = async(req,res)=>{

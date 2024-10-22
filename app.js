@@ -1,8 +1,16 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const connectDB = require('./config/mongodb');
 const app = express();
 const port = process.env.PORT;
+
+
+/// A enlever en prod
+app.use(cors({
+    origin: 'http://localhost:3000', // Permet uniquement les requêtes de cette origine
+    methods: ['GET', 'POST','DELETE'], // Méthodes autorisées
+}));
 
 // Connexion à la base de donnée mongoDB
 connectDB();
