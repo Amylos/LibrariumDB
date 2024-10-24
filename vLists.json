@@ -3,10 +3,10 @@
     "userId": "string",
     "faction": "string",
     "army": "string",
+    "detachments": "string",
     "points": "int",
     "unitsNumber": "int",
     "figurinesNumber" : "int",
-    "detachments": "string",
     "created_at": "date",
     "updated_at": "date",
     "units":[

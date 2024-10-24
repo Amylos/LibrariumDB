@@ -1,6 +1,5 @@
 const usersModel = require('../models/users.model');
 
-
 //Log in User
 module.exports.loginUser = async(req,res)=>{
     const {mail,password} = req.body;
@@ -147,12 +146,6 @@ module.exports.getUser = async (req, res) => {
         res.status(500).json({ message: "An error occurred while fetching the user" });
     }
 };
-
-
-
-
-
-
 
 
 

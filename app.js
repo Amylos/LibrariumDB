@@ -23,6 +23,7 @@ app.use(express.urlencoded({extended:false}));
 
 // Redirection vers les routes
 app.use("/users",require("./routes/users.routes"));
+app.use("/units",require("./routes/units.routes"));
 
 
 // Ecoute sur le port
