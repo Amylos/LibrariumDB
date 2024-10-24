@@ -16,7 +16,7 @@ module.exports.getUnitById = async (req, res) => {
 
     try {
         const unit = await unitModel.findById(id); // Trouve l'unité par ID
-        
+
         if (!unit) {
             return res.status(404).json({ message: "Unit not found" }); // Si l'unité n'est pas trouvée
         }

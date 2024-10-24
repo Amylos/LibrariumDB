@@ -9,7 +9,7 @@ const port = process.env.PORT;
 /// A enlever en prod
 app.use(cors({
     origin: 'http://localhost:3000', // Permet uniquement les requêtes de cette origine
-    methods: ['GET', 'POST','DELETE','PATCH'], // Méthodes autorisées
+    methods: ['GET', 'POST','DELETE','PATCH', 'PUT'], // Méthodes autorisées
 }));
 
 // Connexion à la base de donnée mongoDB
@@ -24,20 +24,11 @@ app.use(express.urlencoded({extended:false}));
 // Redirection vers les routes
 app.use("/users",require("./routes/users.routes"));
 app.use("/units",require("./routes/units.routes"));
+app.use("/detachments",require('./routes/detachments.routes'));
+app.use("/lists", require("./routes/lists.routes"));
 
 
 // Ecoute sur le port
 app.listen(port,()=>{
     console.log('Server is running on port ',port);
 })
-
-
-
-
-
-
-
-
-
-
-

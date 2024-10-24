@@ -3,9 +3,10 @@ const Schema = mongoose.Schema;
 
 const unitSchema = new Schema({
     faction: String,
+    army: String,
     unite: {
-        type: String,
-        unique: true
+        type:String,
+        unique:true
     },
     type: String,
     points: [Number], // Tableau des valeurs de points
@@ -34,6 +35,8 @@ const unitSchema = new Schema({
     aptidudes: Map, // Pour stocker les aptitudes personnalisées
     aptidudes_base: Map, // Aptitudes de base
     mots_cles: [String], // Mots-clés pour l'unité
+    optimisations: [String] // Liste d'optimisations possibles
 });
 
-module.exports = mongoose.model('units', unitSchema);
+
+module.exports = mongoose.model('units',unitSchema);

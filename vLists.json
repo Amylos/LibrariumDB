@@ -1,20 +1,75 @@
 {
-    "author": "string",
-    "userId": "string",
-    "faction": "string",
-    "army": "string",
-    "detachments": "string",
-    "points": "int",
-    "unitsNumber": "int",
-    "figurinesNumber" : "int",
-    "created_at": "date",
-    "updated_at": "date",
-    "units":[
+    "author": "warhammerfan",
+    "userId": "user123",
+    "faction": "Space Marines",
+    "army": "Imperium",
+    "detachments": [
         {
-            "units":"array"
-        },
+            "name": "Tactical Squad",
+            "faction": "Space Marines",
+            "army": "Imperium",
+            "rules": [
+                {
+                    "rule_name": "Bolter Discipline",
+                    "description": "Models in this detachment can fire their bolt weapons twice."
+                }
+            ],
+            "optimisations": [
+                {
+                    "option_name": "Veteran",
+                    "description": "Gain additional experience.",
+                    "cost": 5
+                }
+            ],
+            "stratagems": [
+                {
+                    "stratagem_name": "Combat Doctrines",
+                    "cost": 1,
+                    "description": "Change the doctrine for your detachment."
+                }
+            ]
+        }
+    ],
+    "points": 1500,
+    "unitsNumber": 10,
+    "figurinesNumber": 5,
+    "units": [
         {
-            "units":"array"
+            "faction": "Space Marines",
+            "army": "Imperium",
+            "unite": "Intercessor",
+            "type": "Infantry",
+            "points": [18],
+            "figurines": [1, 5],
+            "stats": {
+                "mouvement": 6,
+                "endurance": 4,
+                "sauvegarde": ["3+"],
+                "points_de_vie": 2,
+                "commandement": 7,
+                "controle_objectif": 1
+            },
+            "armes": {
+                "Bolter": {
+                    "selected": true,
+                    "portee": 24,
+                    "attaque": 1,
+                    "force": 4,
+                    "C_T": 3,
+                    "PA": 0,
+                    "degats": 1,
+                    "capacites": []
+                }
+            },
+            "aptidudes": {
+                "Tactical": true,
+                "Combat": false
+            },
+            "aptidudes_base": {
+                "And They Shall Know No Fear": true
+            },
+            "mots_cles": ["Space Marine", "Troop"],
+            "optimisations": ["Rapid Fire", "Double Tap"]
         }
     ]
 }

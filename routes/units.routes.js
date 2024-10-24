@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getUnits, createUnit, deleteUnit, editUnit, getUnitById,getUnitByName } = require('../controllers/units.controller');
+const { getUnits, createUnit, deleteUnit,
+     editUnit, getUnitById,getUnitByName } = require('../controllers/units.controller');
 
 router.get('/', getUnits); // Récupère toutes les unités
 router.get('/:id', getUnitById); // Récupère une unité par ID

@@ -6,21 +6,16 @@ const { createUser, getUsers,getUser,
         loginUser,logoutUser,logoutUserAll } = require('../controllers/users.controller');
 
 router.get("/", authentification,getUsers);
+router.get("/me", authentification,getUserMe);
+router.get("/:id",getUser);
 
+router.post("/",createUser);
 router.post('/login',loginUser);
 router.post('/logout',authentification,logoutUser);
-router.patch("/me",authentification,patchUser);
-router.delete("/me",authentification,deleteUser);
-
-router.get("/me", authentification,getUserMe);
 router.post('/logout/all',authentification,logoutUserAll);
 
-router.get("/:id",getUser);
-router.post("/",createUser);
+router.patch("/me",authentification,patchUser);
+router.delete("/me",authentification,deleteUser);
 router.put("/:id",editUser);
-
-
-
-
 
 module.exports = router;

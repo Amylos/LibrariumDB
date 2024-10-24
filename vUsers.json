@@ -1,8 +1,11 @@
 {
-    "pseudo":"string",
-    "password":"string",
-    "mail":"string",
-    "role":"string",
-    "created_at":"date",
-    "updated_at": "date"
+    "mail": "user@example.com",
+    "password": "securepassword123",
+    "pseudo": "WarhammerFan",
+    "role": "player",
+    "authTokens": [
+        {
+            "authToken": "abc123token"
+        }
+    ]
 }

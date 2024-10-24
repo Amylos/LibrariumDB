@@ -1,56 +1,26 @@
 {
-    "name": "string",
-    "faction": "string",
-    "rules": [
+  "name": "Tactical Squad",
+  "faction": "Space Marines",
+  "army": "Imperium",
+  "rules": [
       {
-        "rule_name": "Nom de la règle",
-        "description": "Description détaillée de la règle"
+          "rule_name": "Bolter Discipline",
+          "description": "Models in this detachment can fire their bolt weapons twice."
       }
-    ],
-    "optimisations": {
-      "option_name": "Description de l'optimisation",
-      "option_name_2": "Description de l'optimisation 2",
-      "option_name_3": "Description de l'optimisation 2",
-      "option_name_4": "Description de l'optimisation 2",
-      "option_name_5": "Description de l'optimisation 2",
-      "option_name_6": "Description de l'optimisation 2"
+  ],
+  "optimisations": [
+      {
+          "option_name": "Veteran",
+          "description": "Gain additional experience.",
+          "cost": 5
+      }
+  ],
+  "stratagems": [
+      {
+          "stratagem_name": "Combat Doctrines",
+          "cost": 1,
+          "description": "Change the doctrine for your detachment."
+      }
+  ]
+}
 
-    },
-    "stratagems": [
-      {
-        "stratagem_name": "Nom du stratagème",
-        "cost": 2,
-        "description": "Description de l'effet"
-      },
-      {
-        "stratagem_name": "Autre stratagème",
-        "cost": 3,
-        "description": "Autre description"
-      }
-      ,
-      {
-        "stratagem_name": "Autre stratagème",
-        "cost": 3,
-        "description": "Autre description"
-      }
-      ,
-      {
-        "stratagem_name": "Autre stratagème",
-        "cost": 3,
-        "description": "Autre description"
-      }
-      ,
-      {
-        "stratagem_name": "Autre stratagème",
-        "cost": 3,
-        "description": "Autre description"
-      }
-      ,
-      {
-        "stratagem_name": "Autre stratagème",
-        "cost": 3,
-        "description": "Autre description"
-      }
-    ]
-  }
-  
