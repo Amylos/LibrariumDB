@@ -26,6 +26,7 @@ app.use("/users",require("./routes/users.routes"));
 app.use("/units",require("./routes/units.routes"));
 app.use("/detachments",require('./routes/detachments.routes'));
 app.use("/lists", require("./routes/lists.routes"));
+app.use("/armies", require("./routes/armies.routes"));
 
 
 // Ecoute sur le port

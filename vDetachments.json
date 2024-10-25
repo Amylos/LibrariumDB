@@ -1,26 +1,74 @@
 {
-  "name": "Tactical Squad",
-  "faction": "Space Marines",
-  "army": "Imperium",
+  "name": "Détachement Avant-Garde",
+  "faction": "Xenos",
+  "army": "Tyranids",
   "rules": [
-      {
-          "rule_name": "Bolter Discipline",
-          "description": "Models in this detachment can fire their bolt weapons twice."
-      }
+    {
+      "rule_name": "Camouflage Adaptatif",
+      "description": "Les unités de ce détachement bénéficient d'un bonus à leur sauvegarde lorsqu'elles sont à couvert, les rendant plus difficiles à toucher lorsqu'elles sont dissimulées."
+    },
+    {
+      "rule_name": "Infiltration Rapide",
+      "description": "Permet aux unités de se déployer plus loin sur le champ de bataille avant le début du jeu."
+    }
   ],
   "optimisations": [
-      {
-          "option_name": "Veteran",
-          "description": "Gain additional experience.",
-          "cost": 5
-      }
+    {
+      "option_name": "Instinct de Survie",
+      "description": "Améliore la résistance des unités contre les attaques à distance.",
+      "cost": 5
+    },
+    {
+      "option_name": "Évolution Génétique",
+      "description": "Confère aux unités un bonus d'attaque supplémentaire en mêlée.",
+      "cost": 10
+    },
+    {
+      "option_name": "Carapace Renforcée",
+      "description": "Augmente la sauvegarde d'armure des unités pour les protéger des coups puissants.",
+      "cost": 15
+    },
+    {
+      "option_name": "Régénération Accélérée",
+      "description": "Permet aux unités de récupérer des points de vie à chaque tour.",
+      "cost": 20
+    }
   ],
   "stratagems": [
-      {
-          "stratagem_name": "Combat Doctrines",
-          "cost": 1,
-          "description": "Change the doctrine for your detachment."
-      }
+    {
+      "stratagem_name": "Éclaireurs de la Ruche",
+      "cost": 1,
+      "description": "Permet de repositionner une unité avant le début de la partie."
+    },
+    {
+      "stratagem_name": "Charge Inarrêtable",
+      "cost": 2,
+      "description": "Donne un bonus de charge aux unités lorsqu'elles avancent vers une cible ennemie."
+    },
+    {
+      "stratagem_name": "Instinct Prédatorial",
+      "cost": 1,
+      "description": "Confère un bonus d'attaque aux unités en mêlée contre des unités non blindées."
+    },
+    {
+      "stratagem_name": "Réseau Synaptique",
+      "cost": 2,
+      "description": "Permet aux unités de se coordonner pour annuler les pénalités de moral."
+    },
+    {
+      "stratagem_name": "Essaim Avancé",
+      "cost": 1,
+      "description": "Permet à une unité d'avancer et de tirer dans le même tour."
+    },
+    {
+      "stratagem_name": "Frappe Éclair",
+      "cost": 3,
+      "description": "Permet de faire entrer en jeu une unité en réserve avec un bonus de mouvement."
+    }
   ]
 }
+
+
+
+
 
