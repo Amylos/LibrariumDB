@@ -48,6 +48,25 @@ module.exports.editList = async (req, res) => {
 };
 
 
+
+module.exports.getListById = async(req,res) =>{
+    try {
+        const userId = req.params.id;
+        const lists = await List.find({ userId: userId });
+
+        if (!lists) {
+            return res.status(404).json({ message: 'Aucune liste trouvée pour cet utilisateur.' });
+        }
+
+        res.status(200).json(lists);
+    } catch (error) {
+        console.error("Erreur lors de la récupération des listes:", error);
+        res.status(500).json({ message: 'Erreur serveur lors de la récupération des listes.' });
+    }
+}
+
+
+
 module.exports.deleteList = async (req, res) => {
- 
+
 };
