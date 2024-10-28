@@ -30,6 +30,10 @@ const listSchema = new Schema({
         lowercase: true,
         trim: true,
     },
+    armyRules:{
+        type: String,
+        required:true
+    },
     points: {
         type: Number,
         required: true,
@@ -55,16 +59,9 @@ const listSchema = new Schema({
                 lowercase: true,
                 trim: true
             },
-            rules: [
-                {
-                    rule_name: {
-                        type: String,
-                    },
-                    description: {
-                        type: String,
-                    }
-                }
-            ],
+            rules: {
+                type: String
+            },
             optimisations: [
                 {
                     option_name: {
@@ -101,6 +98,7 @@ const listSchema = new Schema({
             army: {
                 type: String,
             },
+        
             unite: {
                 type: String,
             },
@@ -108,7 +106,10 @@ const listSchema = new Schema({
                 type: String,
             },
             points: [Number], // Tableau des valeurs de points
-            figurines: [Number], // Tableau des options de figurines
+            figurines: [{
+                count: { type: Number, required: true },  // Nombre de figurines
+                selected: { type: Boolean, default: false } // Indique si cette quantité est sélectionnée
+            }], // Tableau des options de figurines
             stats: {
                 mouvement: Number,
                 endurance: Number,
@@ -117,24 +118,20 @@ const listSchema = new Schema({
                 commandement: Number,
                 controle_objectif: Number,
             },
-            armes: [
-                {
-                    name: {
-                        type: String,
-                    },
-                    selected: {
-                        type: Boolean,
-                        default: false,
-                    },
+            armes:[ {
+                type: Map,
+                of: new Schema({
+                    name: String,
+                    selected: { type: Boolean, default: false },
                     portee: Number,
                     attaque: Number,
                     force: Number,
-                    C_T: Number, // Capacité de toucher
+                    C_T: Number,
                     PA: Number,
                     degats: Number,
-                    capacites: [String] // Ex: ["A", "D3"]
-                }
-            ],
+                    capacites: [String]
+                })
+            }],
             aptidudes: [
                 {
                     name: {

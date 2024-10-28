@@ -7,7 +7,7 @@ module.exports.getUnits = async (req, res) => {
         return res.status(200).json(units); // Retourne les unités
     } catch (err) {
         console.error(err);
-        return res.status(500).json({ message: "Error fetching units", error: err });
+        return res.status(200).json(units); // Retourne les unités
     }
 };
 
@@ -45,9 +45,6 @@ module.exports.getUnitByName = async (req, res) => {
         return res.status(500).json({ message: "Error fetching unit", error: err });
     }
 };
-
-
-
 
 
 

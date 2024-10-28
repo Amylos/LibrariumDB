@@ -1,75 +1,594 @@
 {
-    "author": "warhammerfan",
-    "userId": "user123",
-    "faction": "Space Marines",
-    "army": "Imperium",
-    "detachments": [
-        {
-            "name": "Tactical Squad",
-            "faction": "Space Marines",
-            "army": "Imperium",
-            "rules": [
-                {
-                    "rule_name": "Bolter Discipline",
-                    "description": "Models in this detachment can fire their bolt weapons twice."
-                }
-            ],
-            "optimisations": [
-                {
-                    "option_name": "Veteran",
-                    "description": "Gain additional experience.",
-                    "cost": 5
-                }
-            ],
-            "stratagems": [
-                {
-                    "stratagem_name": "Combat Doctrines",
-                    "cost": 1,
-                    "description": "Change the doctrine for your detachment."
-                }
-            ]
-        }
-    ],
-    "points": 1500,
+    "author": "a",
+    "userId": "671b9f161f5f1a1c600c56f9",
+    "name": "New",
+    "faction": "Xenos",
+    "army": "Tyranids",
+    "armyRules": "Calcul des Points : Pour chaque figurine sélectionnée, on trouve son index dans le tableau des figurines (unit.figurines). On utilise cet index pour ajouter les points correspondants de unit.points au total",
+    "points": 2000,
     "unitsNumber": 10,
-    "figurinesNumber": 5,
+    "figurinesNumber": 10,
+    "detachments": [
+      {
+        "name": "Détachement Avant-Garde",
+        "faction": "Xenos",
+        "army": "Tyranids",
+        "rules": "rules detachments",
+        "optimisations": [
+          {
+            "option_name": "Instinct de Survie",
+            "description": "Améliore la résistance des unités contre les attaques à distance.",
+            "cost": 5
+          },
+          {
+            "option_name": "Évolution Génétique",
+            "description": "Confère aux unités un bonus d'attaque supplémentaire en mêlée.",
+            "cost": 10
+          },
+          {
+            "option_name": "Carapace Renforcée",
+            "description": "Augmente la sauvegarde d'armure des unités pour les protéger des coups puissants.",
+            "cost": 15
+          },
+          {
+            "option_name": "Régénération Accélérée",
+            "description": "Permet aux unités de récupérer des points de vie à chaque tour.",
+            "cost": 20
+          }
+        ],
+        "stratagems": [
+          {
+            "stratagem_name": "Éclaireurs de la Ruche",
+            "cost": 1,
+            "description": "Permet de repositionner une unité avant le début de la partie."
+          },
+          {
+            "stratagem_name": "Charge Inarrêtable",
+            "cost": 2,
+            "description": "Donne un bonus de charge aux unités lorsqu'elles avancent vers une cible ennemie."
+          },
+          {
+            "stratagem_name": "Instinct Prédatorial",
+            "cost": 1,
+            "description": "Confère un bonus d'attaque aux unités en mêlée contre des unités non blindées."
+          },
+          {
+            "stratagem_name": "Réseau Synaptique",
+            "cost": 2,
+            "description": "Permet aux unités de se coordonner pour annuler les pénalités de moral."
+          },
+          {
+            "stratagem_name": "Essaim Avancé",
+            "cost": 1,
+            "description": "Permet à une unité d'avancer et de tirer dans le même tour."
+          },
+          {
+            "stratagem_name": "Frappe Éclair",
+            "cost": 3,
+            "description": "Permet de faire entrer en jeu une unité en réserve avec un bonus de mouvement."
+          }
+        ]
+      }
+    ],
     "units": [
-        {
-            "faction": "Space Marines",
-            "army": "Imperium",
-            "unite": "Intercessor",
-            "type": "Infantry",
-            "points": [18],
-            "figurines": [1, 5],
-            "stats": {
-                "mouvement": 6,
-                "endurance": 4,
-                "sauvegarde": ["3+"],
-                "points_de_vie": 2,
-                "commandement": 7,
-                "controle_objectif": 1
-            },
-            "armes": {
-                "Bolter": {
-                    "selected": true,
-                    "portee": 24,
-                    "attaque": 1,
-                    "force": 4,
-                    "C_T": 3,
-                    "PA": 0,
-                    "degats": 1,
-                    "capacites": []
-                }
-            },
-            "aptidudes": {
-                "Tactical": true,
-                "Combat": false
-            },
-            "aptidudes_base": {
-                "And They Shall Know No Fear": true
-            },
-            "mots_cles": ["Space Marine", "Troop"],
-            "optimisations": ["Rapid Fire", "Double Tap"]
-        }
+      {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Termagant",
+        "type": "Line",
+        "points": [60,120],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+       {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Termagant",
+        "type": "Line",
+        "points": [60,120],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+       "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      }, {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Termagant",
+        "type": "Line",
+        "points": [60,120],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+       {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Genestealers",
+        "type": "Infantry",
+        "points": [80,160],
+        "figurines": [
+          { "count": 5, "selected": false },
+          { "count": 10, "selected": true }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["5+","5+"],
+          "points_de_vie": 2,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+       "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+       {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Tervigon",
+        "type": "Caracter",
+        "points": [60,180],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+       {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Screamer Killer",
+        "type": "Monster",
+        "points": [135,135],
+        "figurines": [
+          { "count": 1, "selected": true },
+          { "count": 1, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 8,
+          "endurance": 10,
+          "sauvegarde": ["2+"],
+          "points_de_vie": 11,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+      {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Psychophage",
+        "type": "Infantry",
+        "points": [60,120],
+        "figurines": [
+          { "count": 1, "selected": true },
+          { "count": 1, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+      {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Termagant",
+        "type": "Line",
+        "points": [60,120],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+     "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+      {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Termagant",
+        "type": "Line",
+        "points": [60,120],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      },
+      {
+        "faction": "Xénos",
+        "army": "Tyranids",
+        "unite": "Termagant",
+        "type": "Line",
+        "points": [60,120],
+        "figurines": [
+          { "count": 10, "selected": true },
+          { "count": 20, "selected": false }
+        ],
+        "stats": {
+          "mouvement": 6,
+          "endurance": 3,
+          "sauvegarde": ["6+"],
+          "points_de_vie": 1,
+          "commandement": 5,
+          "controle_objectif": 1
+        },
+        "armes": [
+          {
+          "name": "Fleshborer",
+          "selected": true,
+          "portee": 18,
+          "attaque": 1,
+          "force": 4,
+          "C_T": 3,
+          "PA": 0,
+          "degats": 1,
+          "capacites": []
+          },
+          {
+          "name": "Devourer",
+          "selected": false,
+          "portee": 18,
+          "attaque": 3,
+          "force": 4,
+          "C_T": 3,
+          "PA": 0,
+          "degats": 1,
+          "capacites": []
+          }
+      ],
+        "aptidudes": {
+          "Instinctive Behavior": true,
+          "Synapse": false
+        },
+        "aptidudes_base": {
+          "Shadow in the Warp": true
+        },
+        "mots_cles": ["Tyranids", "Troop"],
+        "optimisations": ["Swarm", "Toxin Sacs"]
+      }
     ]
-}
+  }

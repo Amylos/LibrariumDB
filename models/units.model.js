@@ -10,7 +10,10 @@ const unitSchema = new Schema({
     },
     type: String,
     points: [Number], // Tableau des valeurs de points
-    figurines: [Number], // Tableau des options de figurines
+    figurines: [{
+        count: { type: Number, required: true },  // Nombre de figurines
+        selected: { type: Boolean, default: false } // Indique si cette quantité est sélectionnée
+    }], // Tableau des options de figurines
     stats: {
         mouvement: Number,
         endurance: Number,
@@ -19,23 +22,55 @@ const unitSchema = new Schema({
         commandement: Number,
         controle_objectif: Number,
     },
-    armes: {
-        type: Map, // Pour stocker des armes avec leurs caractéristiques
-        of: new Schema({
-            selected: Boolean,
-            portee: Number,
-            attaque: Number,
-            force: Number,
-            C_T: Number, // Capacité de toucher
-            PA: Number,
-            degats: Number,
-            capacites: [String] // Ex: ["A", "D3"]
-        })
-    },
-    aptidudes: Map, // Pour stocker les aptitudes personnalisées
-    aptidudes_base: Map, // Aptitudes de base
-    mots_cles: [String], // Mots-clés pour l'unité
-    optimisations: [String] // Liste d'optimisations possibles
+    armes: [
+        {
+            name: {
+                type: String,
+            },
+            selected: {
+                type: Boolean,
+                default: false,
+            },
+            portee:{
+                type: Number,
+            },
+            attaque: {
+                type: Number,
+            },
+            force: {
+                type: Number,
+            },
+            C_T: { // Capacité de toucher
+                type: Number,
+            },
+            PA: {
+                type: Number,
+            },
+            degats: {
+                type: Number,
+            },
+            capacites: {
+                type: [String], // Ex: ["A", "D3"]
+            }
+        }
+    ],
+    aptidudes: [
+        {
+            name: {
+                type: String,
+            },
+            description: String
+        }
+    ],
+    aptidudes_base: [
+        {
+            name: {
+                type: String,
+            },
+            description: String
+        }
+    ],
+    mots_cles: [String],
 });
 
 

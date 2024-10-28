@@ -52,7 +52,7 @@ module.exports.editList = async (req, res) => {
 module.exports.getListById = async(req,res) =>{
     try {
         const userId = req.params.id;
-        const lists = await List.find({ userId: userId });
+        const lists = await listModel.find({ userId: userId });
 
         if (!lists) {
             return res.status(404).json({ message: 'Aucune liste trouvée pour cet utilisateur.' });
