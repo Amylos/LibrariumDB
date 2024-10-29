@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const detachmentSchema = new Schema({
   name: {
     type: String,
-    unique:true,
     required: true
   },
   faction: {
@@ -13,10 +12,8 @@ const detachmentSchema = new Schema({
   },
   army:{
     type:String,
-    required:true,
-    lowercase:true
   },
-  rules: [
+  rules:
     {
       rule_name: {
         type: String,
@@ -27,7 +24,7 @@ const detachmentSchema = new Schema({
         required: true
       }
     }
-  ],
+  ,
   optimisations: [
     {
       option_name: {

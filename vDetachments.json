@@ -1,74 +1,64 @@
 {
-  "name": "Détachement Avant-Garde",
-  "faction": "Xenos",
-  "army": "Tyranids",
-  "rules": [
-    {
-      "rule_name": "Camouflage Adaptatif",
-      "description": "Les unités de ce détachement bénéficient d'un bonus à leur sauvegarde lorsqu'elles sont à couvert, les rendant plus difficiles à toucher lorsqu'elles sont dissimulées."
-    },
-    {
-      "rule_name": "Infiltration Rapide",
-      "description": "Permet aux unités de se déployer plus loin sur le champ de bataille avant le début du jeu."
-    }
-  ],
+  "name": "Inner circle deawthing",
+  "faction": "Space Marine",
+  "army": "Dark Angels",
+  "rules": {
+      "rule_name": "Disciplined Fire",
+      "description": "Les Space Marines bénéficient d'un bonus de précision lorsqu'ils tirent en groupe."
+  },
   "optimisations": [
-    {
-      "option_name": "Instinct de Survie",
-      "description": "Améliore la résistance des unités contre les attaques à distance.",
-      "cost": 5
-    },
-    {
-      "option_name": "Évolution Génétique",
-      "description": "Confère aux unités un bonus d'attaque supplémentaire en mêlée.",
-      "cost": 10
-    },
-    {
-      "option_name": "Carapace Renforcée",
-      "description": "Augmente la sauvegarde d'armure des unités pour les protéger des coups puissants.",
-      "cost": 15
-    },
-    {
-      "option_name": "Régénération Accélérée",
-      "description": "Permet aux unités de récupérer des points de vie à chaque tour.",
-      "cost": 20
-    }
+      {
+          "option_name": "Tactique de Combat",
+          "description": "Confère un bonus d'attaque à la première unité qui charge.",
+          "cost": 5
+      },
+      {
+          "option_name": "Armure de Terminator",
+          "description": "Augmente la résistance des unités contre les attaques à distance.",
+          "cost": 10
+      },
+      {
+          "option_name": "Support Aérien",
+          "description": "Permet à une unité de bénéficier d'un tir de soutien depuis un véhicule aérien.",
+          "cost": 15
+      },
+      {
+          "option_name": "Renaissance du Chapitre",
+          "description": "Récupération de points de vie pour une unité à la fin du tour.",
+          "cost": 20
+      }
   ],
   "stratagems": [
-    {
-      "stratagem_name": "Éclaireurs de la Ruche",
-      "cost": 1,
-      "description": "Permet de repositionner une unité avant le début de la partie."
-    },
-    {
-      "stratagem_name": "Charge Inarrêtable",
-      "cost": 2,
-      "description": "Donne un bonus de charge aux unités lorsqu'elles avancent vers une cible ennemie."
-    },
-    {
-      "stratagem_name": "Instinct Prédatorial",
-      "cost": 1,
-      "description": "Confère un bonus d'attaque aux unités en mêlée contre des unités non blindées."
-    },
-    {
-      "stratagem_name": "Réseau Synaptique",
-      "cost": 2,
-      "description": "Permet aux unités de se coordonner pour annuler les pénalités de moral."
-    },
-    {
-      "stratagem_name": "Essaim Avancé",
-      "cost": 1,
-      "description": "Permet à une unité d'avancer et de tirer dans le même tour."
-    },
-    {
-      "stratagem_name": "Frappe Éclair",
-      "cost": 3,
-      "description": "Permet de faire entrer en jeu une unité en réserve avec un bonus de mouvement."
-    }
+      {
+          "stratagem_name": "Appel de Réserve",
+          "cost": 1,
+          "description": "Permet de faire entrer une unité de réserve sur le champ de bataille."
+      },
+      {
+          "stratagem_name": "Attaque Coordinée",
+          "cost": 2,
+          "description": "Accorde un bonus de mouvement aux unités qui attaquent ensemble."
+      },
+      {
+          "stratagem_name": "Discipline de la Lame",
+          "cost": 1,
+          "description": "Confère un bonus de puissance aux attaques en mêlée."
+      },
+      {
+          "stratagem_name": "Renforcement du Front",
+          "cost": 2,
+          "description": "Permet de déplacer une unité sans pénalité avant le début de la partie."
+      },
+      {
+          "stratagem_name": "Alerte Rouge",
+          "cost": 1,
+          "description": "Permet à une unité de réagir immédiatement à un mouvement ennemi."
+      },
+      {
+          "stratagem_name": "Frappe de Précision",
+          "cost": 3,
+          "description": "Permet d'ignorer les couverts lors d'une attaque à distance."
+      }
   ]
 }
-
-
-
-
 

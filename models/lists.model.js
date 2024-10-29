@@ -6,8 +6,6 @@ const Schema = mongoose.Schema;
 const listSchema = new Schema({
     author: {
         type: String,
-        required: true,
-        lowercase: true,
         trim: true,
     },
     userId: {
@@ -20,14 +18,10 @@ const listSchema = new Schema({
     },
     faction: {
         type: String,
-        required: true,
-        lowercase: true,
         trim: true,
     },
     army: {
         type: String,
-        required: true,
-        lowercase: true,
         trim: true,
     },
     armyRules:{
@@ -46,65 +40,71 @@ const listSchema = new Schema({
         type: Number,
         required: true,
     },
-    detachments: [
-        {
-            name: {
-                type: String,
+    detachments: {
+        name: {
+          type: String,
+          required: true
+        },
+        faction: {
+          type: String,
+          required: true
+        },
+        army:{
+          type:String,
+        },
+        rules:
+          {
+            rule_name: {
+              type: String,
+              required: true
             },
-            faction: {
-                type: String,
+            description: {
+              type: String,
+              required: true
+            }
+          }
+        ,
+        optimisations: [
+          {
+            option_name: {
+              type: String,
+              required: true
             },
-            army: {
-                type: String,
-                lowercase: true,
-                trim: true
+            description: {
+              type: String,
+              required: true
             },
-            rules: {
-                type: String
+            cost: {
+              type: Number, // Coût en points
+              required: true
+            }
+          }
+        ],
+        stratagems: [
+          {
+            stratagem_name: {
+              type: String,
+              required: true
             },
-            optimisations: [
-                {
-                    option_name: {
-                        type: String,
-                    },
-                    description: {
-                        type: String,
-                    },
-                    cost: {
-                        type: Number,
-                    }
-                }
-            ],
-            stratagems: [
-                {
-                    stratagem_name: {
-                        type: String,
-                    },
-                    cost: {
-                        type: Number,
-                    },
-                    description: {
-                        type: String,
-                    }
-                }
-            ]
-        }
-    ],
+            cost: {
+              type: Number,
+              required: true
+            },
+            description: {
+              type: String,
+              required: true
+            }
+          }
+        ]
+      },
     units: [
         {
-            faction: {
-                type: String,
-            },
-            army: {
-                type: String,
-            },
-        
+            faction: String,
+            army: String,
             unite: {
-                type: String,
+                type:String,
             },
-            type: {
-                type: String,
-            },
+            type: String,
             points: [Number], // Tableau des valeurs de points
             figurines: [{
                 count: { type: Number, required: true },  // Nombre de figurines
@@ -118,21 +118,39 @@ const listSchema = new Schema({
                 commandement: Number,
                 controle_objectif: Number,
             },
-            armes:[ {
-                type: Map,
-                of: new Schema({
-                    name: String,
-                    selected: { type: Boolean, default: false },
-                    portee: Number,
-                    attaque: Number,
-                    force: Number,
-                    C_T: Number,
-                    PA: Number,
-                    degats: Number,
-                    capacites: [String]
-                })
-            }],
-            aptidudes: [
+            armes: [
+                {
+                    name: {
+                        type: String,
+                    },
+                    selected: {
+                        type: Boolean,
+                        default: false,
+                    },
+                    portee:{
+                        type: Number,
+                    },
+                    attaque: {
+                        type: Number,
+                    },
+                    force: {
+                        type: Number,
+                    },
+                    C_T: { // Capacité de toucher
+                        type: Number,
+                    },
+                    PA: {
+                        type: Number,
+                    },
+                    degats: {
+                        type: Number,
+                    },
+                    capacites: {
+                        type: [String], // Ex: ["A", "D3"]
+                    }
+                }
+            ],
+            aptitudes: [
                 {
                     name: {
                         type: String,
@@ -140,7 +158,7 @@ const listSchema = new Schema({
                     description: String
                 }
             ],
-            aptidudes_base: [
+            aptitudes_base: [
                 {
                     name: {
                         type: String,
@@ -148,7 +166,7 @@ const listSchema = new Schema({
                     description: String
                 }
             ],
-            mots_cles: [String], // Mots-clés pour l'unité
+            mots_cles: [String],
         }
     ]
 });

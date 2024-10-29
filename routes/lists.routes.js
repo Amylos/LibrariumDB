@@ -9,7 +9,7 @@ router.get('/:id',getListById);
 // router.get('/author/:author',getListByAuthor);
 
 router.post('/',createList);
-router.patch('/:id',editList);
+router.patch('/:id', editList);
 router.delete('/:id', deleteList);
 
 

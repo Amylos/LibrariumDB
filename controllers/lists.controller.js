@@ -34,18 +34,28 @@ module.exports.createList = async (req, res) => {
 
 module.exports.editList = async (req, res) => {
     try {
-        const { id } = req.params; // Destructuration de l'ID depuis les paramètres de la requête
-        const { body } = req; // Destructuration du corps de la requête
+        const { selectedList } = req.body; // Récupérer la liste complète
+        const { _id } = selectedList; // Obtenir l'ID de la liste
 
-        const updatedList = await listModel.findByIdAndUpdate(id, body, { new: true });
+        // Trouver la liste par son ID
+        const updatedList = await listModel.findById(_id);
         if (!updatedList) {
             return res.status(404).json({ error: 'Liste non trouvée' });
         }
-        return res.status(200).json(updatedList);
+
+        // Mettre à jour les unités de la liste
+        updatedList.units = selectedList.units;
+
+        // Sauvegarder les changements dans la base de données
+        await updatedList.save();
+
+        return res.status(200).json(updatedList); // Retourner la liste mise à jour
     } catch (err) {
+        console.error("Erreur lors de la mise à jour de la liste:", err);
         return res.status(400).json({ error: 'Erreur lors de la mise à jour de la liste' });
     }
 };
+
 
 
 

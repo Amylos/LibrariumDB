@@ -27,9 +27,9 @@ module.exports.getArmies = async(req,res) =>{
 }
 
 module.exports.createArmy = async(req,res) =>{
-    const { faction, name } = req.body;
+    const { faction, name,rules } = req.body;
     try {
-        const newArmy = new armyModel({ faction, name });
+        const newArmy = new armyModel({ faction, name,rules });
         const savedArmy = await newArmy.save();
         return res.status(201).json(savedArmy);
     } catch (error) {

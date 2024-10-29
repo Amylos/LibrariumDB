@@ -6,7 +6,6 @@ const unitSchema = new Schema({
     army: String,
     unite: {
         type:String,
-        unique:true
     },
     type: String,
     points: [Number], // Tableau des valeurs de points
@@ -54,7 +53,7 @@ const unitSchema = new Schema({
             }
         }
     ],
-    aptidudes: [
+    aptitudes: [
         {
             name: {
                 type: String,
@@ -62,7 +61,7 @@ const unitSchema = new Schema({
             description: String
         }
     ],
-    aptidudes_base: [
+    aptitudes_base: [
         {
             name: {
                 type: String,

@@ -1,49 +1,65 @@
 {
-    "faction": "Space Marines",
-    "army": "Imperium",
-    "unite": "Intercessor",
-    "type": "Infantry",
-    "points": [18],
-    "figurines": [1, 5],
+    "faction": "Xénos",
+    "army": "Tyranids",
+    "unite": "Termagant",
+    "type": "Line",
+    "points": [60, 120],
+    "figurines": [
+      { "count": 10, "selected": true },
+      { "count": 20, "selected": false }
+    ],
     "stats": {
-        "mouvement": 6,
-        "endurance": 4,
-        "sauvegarde": ["3+"],
-        "points_de_vie": 2,
-        "commandement": 7,
-        "controle_objectif": 1
+      "mouvement": 6,
+      "endurance": 3,
+      "sauvegarde": ["6+"],
+      "points_de_vie": 1,
+      "commandement": 5,
+      "controle_objectif": 1
     },
-    "armes": {
-        "Bolter": {
-            "selected": true,
-            "portee": 24,
-            "attaque": 1,
-            "force": 4,
-            "C_T": 3,
-            "PA": 0,
-            "degats": 1,
-            "capacites": []
-        },
-        "Plasma Rifle": {
-            "selected": false,
-            "portee": 24,
-            "attaque": 1,
-            "force": 7,
-            "C_T": 3,
-            "PA": -3,
-            "degats": 1,
-            "capacites": ["D6"]
-        }
-    },
-    "aptidudes": {
-        "Tactical": true,
-        "Combat": false
-    },
-    "aptidudes_base": {
-        "And They Shall Know No Fear": true
-    },
-    "mots_cles": ["Space Marine", "Troop"],
-    "optimisations": ["Rapid Fire", "Double Tap"]
-}
-
-
+    "armes": [
+      {
+        "name": "Fleshborer",
+        "selected": true,
+        "portee": 18,
+        "attaque": 1,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      },
+      {
+        "name": "Devourer",
+        "selected": false,
+        "portee": 18,
+        "attaque": 3,
+        "force": 4,
+        "C_T": 3,
+        "PA": 0,
+        "degats": 1,
+        "capacites": []
+      }
+    ],
+    "aptitudes": [
+      {
+        "name": "Swarm",
+        "description": "Les Termagants peuvent se déplacer en masse, ce qui leur permet de submerger les ennemis."
+      },
+      {
+        "name": "Toxin Sacs",
+        "description": "Augmente la force des attaques."
+      }
+    ],
+    "aptitudes_base": [
+      {
+        "name": "Instinct de Survie",
+        "description": "Les Termagants bénéficient d'un bonus de résistance contre les attaques à distance."
+      },
+      {
+        "name": "Tactique de Ruche",
+        "description": "Confère un bonus d'attaque en cas de charge."
+      }
+    ],
+    "mots_cles": ["Tyranids", "Troop"],
+    "optimisations": ["Swarm", "Toxin Sacs"]
+  }
