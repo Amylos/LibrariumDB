@@ -169,7 +169,7 @@ const listSchema = new Schema({
             mots_cles: [String],
         }
     ]
-});
+}, { versionKey: false });
 
 module.exports = mongoose.model('lists', listSchema);
 
