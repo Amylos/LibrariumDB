@@ -52,7 +52,7 @@ module.exports.editList = async (req, res) => {
         return res.status(200).json(updatedList); // Retourner la liste mise à jour
     } catch (err) {
         console.error("Erreur lors de la mise à jour de la liste:", err);
-        return res.status(400).json({ error: 'Erreur lors de la mise à jour de la liste' });
+        return res.status(400).json({ error: 'Erreur lors de la mis à jour de la liste' });
     }
 };
 
